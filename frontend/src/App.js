@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Bell, TrendingDown, Search, Plus, Trash2, ExternalLink, RefreshCw, AlertCircle, Zap } from 'lucide-react';
+import { Bell, Search, Plus, Trash2, ExternalLink, RefreshCw, AlertCircle, Zap } from 'lucide-react';
 
 // Configure your backend API URL
-const API_URL = process.env.REACT_APP_API_URL || 'https://price-tracker-6z15.onrender.com';
-
+const API_URL = process.env.REACT_APP_API_URL || 'https://price-tracker-wfzw.onrender.com/api';
 export default function PriceTrackerWithAPI() {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -557,7 +556,7 @@ export default function PriceTrackerWithAPI() {
                     </button>
                     <button
                       onClick={() => {
-                        if (confirm('Delete this product?')) deleteProduct(product.id);
+                        if (window.confirm('Delete this product?')) deleteProduct(product.id);
                       }}
                       style={{
                         padding: '0.5rem 0.75rem',
